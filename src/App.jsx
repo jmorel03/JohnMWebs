@@ -214,6 +214,10 @@ function App() {
             <p>Built to turn visitors into leads, calls, and paying customers-not just look good.</p>
           </article>
         </div>
+        <p className="reason-summary">
+          Your website isn&rsquo;t just a design-it&rsquo;s your first impression,
+          your credibility, and your sales tool.
+        </p>
       </section>
 
       <section className="services-section" id="services">

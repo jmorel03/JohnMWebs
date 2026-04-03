@@ -162,22 +162,19 @@ main {
 
 .hero-badge {
   flex-shrink: 0;
-  width: clamp(6rem, 14vw, 11rem);
-  height: clamp(6rem, 14vw, 11rem);
-  border-radius: 24px;
-  background: linear-gradient(180deg, #ffffff, #f7f4ef);
-  border: 1px solid var(--border);
+  width: clamp(8rem, 18vw, 14rem);
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md);
 }
 
 .hero-logo {
-  width: 78%;
+  width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 10px 22px rgba(15, 31, 38, 0.12));
 }
 
 /* ─── Shared section labels ───────────────────── */
@@ -289,6 +286,15 @@ main {
 .reason-card p {
   color: var(--ink);
   font-size: 0.95rem;
+}
+
+.reason-summary {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: 1rem;
+  color: var(--ink-strong);
+  max-width: 58ch;
 }
 
 /* ─── About ───────────────────────────────────── */
