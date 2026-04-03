@@ -158,63 +158,93 @@ function App() {
       </header>
 
       <section className="hero" id="top">
-        <p className="eyebrow">JohnMWebs</p>
-        <h1>Portfolio Website for Client Work</h1>
-        <p className="hero-copy">
-          A simple space to showcase my work so clients can quickly see my
-          style and capabilities.
-        </p>
-        <div className="hero-actions">
-          <a href="#contact" className="button primary">
-            View Portfolio
-          </a>
+        <div className="hero-content">
+          <p className="eyebrow">Web Design & Development</p>
+          <h1>Crafted Websites.<br />Built for Business.</h1>
+          <p className="hero-copy">
+            A curated portfolio of client work — clean, modern websites
+            built to make a lasting impression.
+          </p>
+          <div className="hero-actions">
+            <a href="#contact" className="button primary">
+              Get in Touch
+            </a>
+            <a href="#about" className="button outline">
+              View Work
+            </a>
+          </div>
+        </div>
+        <div className="hero-badge" aria-hidden="true">
+          <span>J</span>
         </div>
       </section>
 
       <section className="about" id="about">
-        <h2>Portfolio</h2>
-        <p>
-          This is my portfolio website where clients can view my work, style,
-          and upcoming projects in one simple place.
+        <div className="section-label">Portfolio</div>
+        <h2>Work That Speaks for Itself</h2>
+        <p className="section-copy">
+          Browse my projects below to see how I approach design, layout, and
+          performance. Each site is built from scratch — no templates.
         </p>
+        <div className="about-stats">
+          <div className="stat">
+            <span className="stat-number">100%</span>
+            <span className="stat-label">Custom Built</span>
+          </div>
+          <div className="stat">
+            <span className="stat-number">Fast</span>
+            <span className="stat-label">Load Times</span>
+          </div>
+          <div className="stat">
+            <span className="stat-number">Clean</span>
+            <span className="stat-label">Modern Design</span>
+          </div>
+        </div>
       </section>
 
       <section className="cta" id="contact">
-        <h2>Ready to Build Something Sharp?</h2>
-        <p>
-          Tell me what you are launching and I will map out the right site
-          structure, visuals, and messaging for your goals.
-        </p>
-        <button
-          type="button"
-          className="button primary"
-          aria-expanded={isContactOpen}
-          aria-controls="contact-form-panel"
-          onClick={() => setIsContactOpen((current) => !current)}
-        >
-          {isContactOpen ? 'Hide Contact Form' : 'Open Contact Form'}
-        </button>
+        <div className="cta-header">
+          <div className="section-label">Contact</div>
+          <h2>Let&rsquo;s Work Together</h2>
+          <p className="section-copy">
+            Have a project in mind? Fill out the form and I&rsquo;ll get back to you.
+          </p>
+          <button
+            type="button"
+            className="button primary"
+            aria-expanded={isContactOpen}
+            aria-controls="contact-form-panel"
+            onClick={() => setIsContactOpen((current) => !current)}
+          >
+            {isContactOpen ? 'Close Form' : 'Start a Project'}
+          </button>
+        </div>
 
         <div
           id="contact-form-panel"
           className={`contact-panel${isContactOpen ? ' open' : ''}`}
         >
           <form className="contact-form" onSubmit={handleContactSubmit}>
-            <label htmlFor="client-name">Name</label>
-            <input id="client-name" name="name" type="text" required />
-
-            <label htmlFor="client-email">Email</label>
-            <input id="client-email" name="email" type="email" required />
-
-            <label htmlFor="client-message">Project Details</label>
-            <textarea
-              id="client-message"
-              name="message"
-              rows="4"
-              placeholder="Tell me what you want to build..."
-              required
-            />
-
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="client-name">Name</label>
+                <input id="client-name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="client-email">Email</label>
+                <input id="client-email" name="email" type="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div className="form-field">
+              <label htmlFor="client-message">Project Details</label>
+              <textarea
+                id="client-message"
+                name="message"
+                rows="5"
+                placeholder="Tell me what you want to build..."
+                required
+              />
+            </div>
             <button
               type="submit"
               className="button primary submit-button"
@@ -223,7 +253,6 @@ function App() {
               {submitState === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
           </form>
-
           {submitMessage ? (
             <p className={`contact-note ${submitState}`}>{submitMessage}</p>
           ) : null}
@@ -231,8 +260,8 @@ function App() {
       </section>
 
       <footer>
-        <p>JohnMWebs</p>
-        <a href="#top">Back to top</a>
+        <span>© {new Date().getFullYear()} JohnMWebs</span>
+        <a href="#top">↑ Back to top</a>
       </footer>
     </main>
   )
