@@ -186,19 +186,19 @@ function App() {
           Browse my projects below to see how I approach design, layout, and
           performance. Each site is built from scratch — no templates.
         </p>
-        <div className="about-stats">
-          <div className="stat">
-            <span className="stat-number">100%</span>
-            <span className="stat-label">Custom Built</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">Fast</span>
-            <span className="stat-label">Load Times</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">Clean</span>
-            <span className="stat-label">Modern Design</span>
-          </div>
+        <div className="project-grid" aria-label="Project placeholders">
+          {[1, 2, 3].map((project) => (
+            <article className="project-box" key={project}>
+              <div className="project-media" aria-hidden="true">
+                <span>Project Image</span>
+              </div>
+              <div className="project-details">
+                <h3>Project Title</h3>
+                <p>Short project description will go here.</p>
+                <span className="project-link">Project Link</span>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -253,6 +253,7 @@ function App() {
               {submitState === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
           </form>
+
           {submitMessage ? (
             <p className={`contact-note ${submitState}`}>{submitMessage}</p>
           ) : null}
