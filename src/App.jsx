@@ -105,7 +105,12 @@ function App() {
         body: JSON.stringify(payload),
       })
 
-      const result = await response.json()
+      let result = {}
+      try {
+        result = await response.json()
+      } catch {
+        // response body wasn't JSON — treat 2xx as success anyway
+      }
 
       if (!response.ok) {
         throw new Error(result.error || 'Could not send your message.')
@@ -114,9 +119,9 @@ function App() {
       setSubmitState('success')
       setSubmitMessage('Thanks. Your message was sent successfully.')
       event.currentTarget.reset()
-    } catch {
+    } catch (err) {
       setSubmitState('error')
-      setSubmitMessage('Something went wrong. Please try again in a moment.')
+      setSubmitMessage(err.message || 'Something went wrong. Please try again in a moment.')
     }
   }
 
