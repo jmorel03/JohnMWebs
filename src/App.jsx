@@ -85,8 +85,9 @@ function App() {
 
   const handleContactSubmit = async (event) => {
     event.preventDefault()
+    const form = event.currentTarget
 
-    const formData = new FormData(event.currentTarget)
+    const formData = new FormData(form)
     const payload = {
       name: formData.get('name')?.toString().trim(),
       email: formData.get('email')?.toString().trim(),
@@ -118,7 +119,7 @@ function App() {
 
       setSubmitState('success')
       setSubmitMessage('Thanks. Your message was sent successfully.')
-      event.currentTarget.reset()
+      form.reset()
     } catch (err) {
       setSubmitState('error')
       setSubmitMessage(err.message || 'Something went wrong. Please try again in a moment.')
