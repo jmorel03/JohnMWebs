@@ -7,6 +7,9 @@ function App() {
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [submitState, setSubmitState] = useState('idle')
   const [submitMessage, setSubmitMessage] = useState('')
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const [heroShift, setHeroShift] = useState(0)
+  const [visibleSections, setVisibleSections] = useState({ top: true })
   const navRef = useRef(null)
   const [indicatorStyle, setIndicatorStyle] = useState({
     left: 0,
@@ -41,6 +44,58 @@ function App() {
     return () => {
       sections.forEach((section) => observer.unobserve(section))
       observer.disconnect()
+    }
+  }, [])
+
+  useEffect(() => {
+    const sectionIds = ['top', 'why', 'services', 'about', 'contact']
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setVisibleSections((current) => {
+          const next = { ...current }
+
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              next[entry.target.id] = true
+            }
+          })
+
+          return next
+        })
+      },
+      {
+        rootMargin: '-10% 0px -12% 0px',
+        threshold: 0.2,
+      }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section))
+      observer.disconnect()
+    }
+  }, [])
+
+  useEffect(() => {
+    const updateScrollEffects = () => {
+      const doc = document.documentElement
+      const totalScrollable = doc.scrollHeight - doc.clientHeight
+      const progress = totalScrollable > 0 ? window.scrollY / totalScrollable : 0
+
+      setScrollProgress(progress)
+      setHeroShift(Math.min(window.scrollY * 0.08, 42))
+    }
+
+    updateScrollEffects()
+    window.addEventListener('scroll', updateScrollEffects, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollEffects)
     }
   }, [])
 
@@ -130,6 +185,10 @@ function App() {
 
   return (
     <main>
+      <div className="scroll-progress" aria-hidden="true">
+        <span style={{ transform: `scaleX(${scrollProgress})` }} />
+      </div>
+
       <header className="top-nav" aria-label="Main navigation">
         <a href="#top" className="brand-link">
           <img
@@ -159,7 +218,7 @@ function App() {
         </nav>
       </header>
 
-      <section className="hero" id="top">
+      <section className={`hero reveal ${visibleSections.top ? 'in-view' : ''}`} id="top">
         <div className="hero-content">
           <p className="eyebrow">Web Design & Development</p>
           <p className="hero-personal">
@@ -183,7 +242,11 @@ function App() {
             </a>
           </div>
         </div>
-        <div className="hero-badge" aria-hidden="true">
+        <div
+          className="hero-badge"
+          aria-hidden="true"
+          style={{ transform: `translateY(${heroShift}px)` }}
+        >
           <img
             src={logo}
             alt=""
@@ -194,7 +257,7 @@ function App() {
         </div>
       </section>
 
-      <section className="why-section" id="why">
+      <section className={`why-section reveal ${visibleSections.why ? 'in-view' : ''}`} id="why">
         <div className="section-label">Why Choose Me</div>
         <h2>Built With Strategy, Clarity, and Quality</h2>
         <p className="section-copy">
@@ -224,7 +287,7 @@ function App() {
         </p>
       </section>
 
-      <section className="services-section" id="services">
+      <section className={`services-section reveal ${visibleSections.services ? 'in-view' : ''}`} id="services">
         <div className="section-label">Services</div>
         <h2>Websites Built for Local Business Growth</h2>
         <p className="section-copy">
@@ -251,7 +314,7 @@ function App() {
         </div>
       </section>
 
-      <section className="about" id="about">
+      <section className={`about reveal ${visibleSections.about ? 'in-view' : ''}`} id="about">
         <div className="section-label">Portfolio</div>
         <h2>Work That Speaks for Itself</h2>
         <p className="section-copy">
@@ -274,7 +337,7 @@ function App() {
         </div>
       </section>
 
-      <section className="cta" id="contact">
+      <section className={`cta reveal ${visibleSections.contact ? 'in-view' : ''}`} id="contact">
         <div className="cta-header">
           <div className="section-label">Contact</div>
           <h2>Get a Website That Brings You Customers</h2>
