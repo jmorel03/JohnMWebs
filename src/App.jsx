@@ -144,19 +144,19 @@ function App() {
   const projects = [
     {
       title: 'Xpensist',
-      description: 'A clean, modern website for a local expense management company.',
+      description: 'A clean, modern finances app for tracking expenses and managing budgets.',
       image: xpensistLogo,
       imageAlt: 'Xpensist logo',
       link: 'https://xpensist.com',
       linkLabel: 'Visit Live Site',
     },
     {
-      title: 'Project Title',
-      description: 'Short project description will go here.',
+      title: 'Precision Roofing',
+      description: 'A professional service website built for roofing companies to showcase their work and convert local leads.',
       image: null,
-      imageAlt: '',
-      link: '',
-      linkLabel: 'Project Link',
+      imageAlt: 'Precision Roofing preview',
+      link: '/projects/precision-roofing',
+      linkLabel: 'View Project',
     },
     {
       title: 'Project Title',
