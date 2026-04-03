@@ -139,6 +139,13 @@ main {
   border-radius: 999px;
 }
 
+.hero-personal {
+  margin-bottom: 0.9rem;
+  max-width: 52ch;
+  font-size: 0.98rem;
+  color: var(--ink-strong);
+}
+
 .hero-copy {
   margin-top: 1rem;
   font-size: 1.05rem;
@@ -150,7 +157,8 @@ main {
 .hero-intro {
   margin-top: 0.9rem;
   max-width: 52ch;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
+  font-weight: 600;
   color: var(--ink-strong);
 }
 

@@ -162,17 +162,21 @@ function App() {
       <section className="hero" id="top">
         <div className="hero-content">
           <p className="eyebrow">Web Design & Development</p>
+          <p className="hero-personal">
+            I&rsquo;m Jonathan, a web developer focused on building clean,
+            high-performing websites for small businesses.
+          </p>
           <h1>Custom Websites That Help Local Businesses Get More Customers</h1>
           <p className="hero-copy">
             Fast, modern, conversion-focused websites built from scratch.
           </p>
           <p className="hero-intro">
-            I&rsquo;m Jonathan, a web developer focused on building clean,
-            high-performing websites for small businesses.
+            No templates. No shortcuts. Just websites built to grow your
+            business.
           </p>
           <div className="hero-actions">
             <a href="#contact" className="button primary">
-              Get in Touch
+              Start Your Website
             </a>
             <a href="#about" className="button outline">
               View Work
@@ -222,7 +226,7 @@ function App() {
 
       <section className="services-section" id="services">
         <div className="section-label">Services</div>
-        <h2>Website Services for Local Business Growth</h2>
+        <h2>Websites Built for Local Business Growth</h2>
         <p className="section-copy">
           Everything is built around helping your business look more credible,
           attract more attention, and turn visitors into real customers.
@@ -275,7 +279,8 @@ function App() {
           <div className="section-label">Contact</div>
           <h2>Get a Website That Brings You Customers</h2>
           <p className="section-copy">
-            Have a project in mind? Fill out the form and I&rsquo;ll get back to you.
+            Tell me about your business and I&rsquo;ll build you a website designed
+            to bring in customers.
           </p>
           <button
             type="button"
