@@ -4,6 +4,9 @@ import logo from './assets/logo.png'
 
 function App() {
   const [activeSection, setActiveSection] = useState('top')
+  const [isContactOpen, setIsContactOpen] = useState(false)
+  const [submitState, setSubmitState] = useState('idle')
+  const [submitMessage, setSubmitMessage] = useState('')
   const navRef = useRef(null)
   const [indicatorStyle, setIndicatorStyle] = useState({
     left: 0,
@@ -80,6 +83,43 @@ function App() {
     { id: 'contact', label: 'Contact' },
   ]
 
+  const handleContactSubmit = async (event) => {
+    event.preventDefault()
+
+    const formData = new FormData(event.currentTarget)
+    const payload = {
+      name: formData.get('name')?.toString().trim(),
+      email: formData.get('email')?.toString().trim(),
+      message: formData.get('message')?.toString().trim(),
+    }
+
+    setSubmitState('sending')
+    setSubmitMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Could not send your message.')
+      }
+
+      setSubmitState('success')
+      setSubmitMessage('Thanks. Your message was sent successfully.')
+      event.currentTarget.reset()
+    } catch {
+      setSubmitState('error')
+      setSubmitMessage('Something went wrong. Please try again in a moment.')
+    }
+  }
+
   return (
     <main>
       <header className="top-nav" aria-label="Main navigation">
@@ -139,9 +179,49 @@ function App() {
           Tell me what you are launching and I will map out the right site
           structure, visuals, and messaging for your goals.
         </p>
-        <a href="mailto:hello@johnmwebs.com" className="button primary">
-          hello@johnmwebs.com
-        </a>
+        <button
+          type="button"
+          className="button primary"
+          aria-expanded={isContactOpen}
+          aria-controls="contact-form-panel"
+          onClick={() => setIsContactOpen((current) => !current)}
+        >
+          {isContactOpen ? 'Hide Contact Form' : 'Open Contact Form'}
+        </button>
+
+        <div
+          id="contact-form-panel"
+          className={`contact-panel${isContactOpen ? ' open' : ''}`}
+        >
+          <form className="contact-form" onSubmit={handleContactSubmit}>
+            <label htmlFor="client-name">Name</label>
+            <input id="client-name" name="name" type="text" required />
+
+            <label htmlFor="client-email">Email</label>
+            <input id="client-email" name="email" type="email" required />
+
+            <label htmlFor="client-message">Project Details</label>
+            <textarea
+              id="client-message"
+              name="message"
+              rows="4"
+              placeholder="Tell me what you want to build..."
+              required
+            />
+
+            <button
+              type="submit"
+              className="button primary submit-button"
+              disabled={submitState === 'sending'}
+            >
+              {submitState === 'sending' ? 'Sending...' : 'Send Message'}
+            </button>
+          </form>
+
+          {submitMessage ? (
+            <p className={`contact-note ${submitState}`}>{submitMessage}</p>
+          ) : null}
+        </div>
       </section>
 
       <footer>

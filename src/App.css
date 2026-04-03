@@ -165,6 +165,79 @@ main {
   animation: rise 1.45s ease-out both;
 }
 
+.contact-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-panel.open {
+  max-height: 520px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 1rem;
+}
+
+.contact-form {
+  text-align: left;
+  display: grid;
+  gap: 0.6rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: var(--ink-strong);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 0.72rem 0.82rem;
+  font: inherit;
+  color: var(--ink-strong);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(222, 95, 59, 0.35);
+  border-color: rgba(222, 95, 59, 0.55);
+}
+
+.submit-button {
+  margin-top: 0.35rem;
+  width: fit-content;
+}
+
+.submit-button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.contact-note {
+  margin-top: 0.9rem;
+  font-size: 0.94rem;
+}
+
+.contact-note.success {
+  color: #1f5c47;
+}
+
+.contact-note.error {
+  color: #a23629;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
