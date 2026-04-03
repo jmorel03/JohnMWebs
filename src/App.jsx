@@ -12,7 +12,7 @@ function App() {
   })
 
   useEffect(() => {
-    const sectionIds = ['top', 'about', 'projects', 'contact']
+    const sectionIds = ['top', 'about', 'contact']
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean)
@@ -77,7 +77,6 @@ function App() {
   const navItems = [
     { id: 'top', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ]
 
@@ -114,65 +113,24 @@ function App() {
 
       <section className="hero" id="top">
         <p className="eyebrow">JohnMWebs</p>
-        <h1>Web Experiences That Help Businesses Get Chosen</h1>
+        <h1>Portfolio Website for Client Work</h1>
         <p className="hero-copy">
-          I build fast, high-converting websites for local brands, creators, and
-          growing teams that need a strong online presence.
+          A simple space to showcase my work so clients can quickly see my
+          style and capabilities.
         </p>
         <div className="hero-actions">
-          <a href="#projects" className="button primary">
+          <a href="#contact" className="button primary">
             View Portfolio
-          </a>
-          <a href="#contact" className="button secondary">
-            Start a Project
           </a>
         </div>
       </section>
 
       <section className="about" id="about">
-        <h2>What I Do</h2>
+        <h2>Portfolio</h2>
         <p>
-          From strategy to launch, I design and build portfolio, service, and
-          ecommerce sites that look premium and work hard for your business.
+          This is my portfolio website where clients can view my work, style,
+          and upcoming projects in one simple place.
         </p>
-        <ul className="pill-list">
-          <li>Brand-first UI</li>
-          <li>Responsive development</li>
-          <li>Performance optimization</li>
-          <li>SEO setup</li>
-        </ul>
-      </section>
-
-      <section id="projects" className="projects">
-        <h2>Featured Projects</h2>
-        <div className="project-grid">
-          <article className="project-card">
-            <p className="project-type">Service Business</p>
-            <h3>Summit Exterior Co.</h3>
-            <p>
-              Rebuilt a contractor website with clearer offers, before/after
-              galleries, and streamlined quote requests.
-            </p>
-          </article>
-
-          <article className="project-card">
-            <p className="project-type">Personal Brand</p>
-            <h3>Elena M. Creative</h3>
-            <p>
-              Crafted a minimal portfolio with storytelling sections and project
-              highlights that increased inquiry quality.
-            </p>
-          </article>
-
-          <article className="project-card">
-            <p className="project-type">Retail</p>
-            <h3>Northline Goods</h3>
-            <p>
-              Designed a modern storefront emphasizing product bundles,
-              testimonials, and repeat-customer offers.
-            </p>
-          </article>
-        </div>
       </section>
 
       <section className="cta" id="contact">

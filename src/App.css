@@ -91,7 +91,6 @@ main {
 
 .hero,
 .about,
-.projects,
 .cta {
   border: 1px solid var(--card-border);
   background: var(--card-bg);
@@ -157,61 +156,8 @@ main {
   color: #fff8f0;
 }
 
-.secondary {
-  color: var(--ink-strong);
-  border: 1px solid var(--card-border);
-  background: rgba(255, 255, 255, 0.75);
-}
-
 .about {
   animation: rise 0.95s ease-out both;
-}
-
-.pill-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  padding: 0;
-  margin: 1.25rem 0 0;
-}
-
-.pill-list li {
-  border: 1px solid var(--card-border);
-  border-radius: 999px;
-  padding: 0.4rem 0.9rem;
-  background: rgba(255, 250, 240, 0.8);
-  font-size: 0.9rem;
-}
-
-.projects {
-  animation: rise 1.2s ease-out both;
-}
-
-.project-grid {
-  margin-top: 1.25rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.project-card {
-  border-radius: 18px;
-  border: 1px solid var(--card-border);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 247, 230, 0.88));
-  padding: 1rem;
-}
-
-.project-type {
-  font-size: 0.75rem;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.25rem;
-}
-
-.project-card h3 {
-  margin: 0 0 0.5rem;
 }
 
 .cta {
@@ -256,10 +202,6 @@ footer a {
   .top-nav nav {
     justify-content: space-between;
     flex-wrap: wrap;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
   }
 
   footer {
