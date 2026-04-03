@@ -15,7 +15,7 @@ function App() {
   })
 
   useEffect(() => {
-    const sectionIds = ['top', 'about', 'contact']
+    const sectionIds = ['top', 'why', 'about', 'contact']
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean)
@@ -79,6 +79,7 @@ function App() {
 
   const navItems = [
     { id: 'top', label: 'Home' },
+    { id: 'why', label: 'Why Me' },
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
   ]
@@ -160,10 +161,9 @@ function App() {
       <section className="hero" id="top">
         <div className="hero-content">
           <p className="eyebrow">Web Design & Development</p>
-          <h1>Crafted Websites.<br />Built for Business.</h1>
+          <h1>Custom Websites That Help Local Businesses Get More Customers</h1>
           <p className="hero-copy">
-            A curated portfolio of client work — clean, modern websites
-            built to make a lasting impression.
+            Fast, modern, conversion-focused websites built from scratch.
           </p>
           <div className="hero-actions">
             <a href="#contact" className="button primary">
@@ -176,6 +176,29 @@ function App() {
         </div>
         <div className="hero-badge" aria-hidden="true">
           <span>J</span>
+        </div>
+      </section>
+
+      <section className="why-section" id="why">
+        <div className="section-label">Why Choose Me</div>
+        <h2>Built With Strategy, Clarity, and Quality</h2>
+        <p className="section-copy">
+          Every website is designed to look professional, load quickly, and
+          give potential customers a clear reason to trust your business.
+        </p>
+        <div className="reason-grid">
+          <article className="reason-card">
+            <h3>Custom From the Ground Up</h3>
+            <p>Your site is built specifically for your business, your brand, and the way you want to be seen online.</p>
+          </article>
+          <article className="reason-card">
+            <h3>Modern and High-Performing</h3>
+            <p>Clean design, responsive layouts, and fast load times come standard so your site feels current and credible.</p>
+          </article>
+          <article className="reason-card">
+            <h3>Designed to Convert</h3>
+            <p>The goal is not only to look good. It is to help more visitors become real leads, calls, and customers.</p>
+          </article>
         </div>
       </section>
 
