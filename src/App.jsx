@@ -199,16 +199,19 @@ function App() {
         </p>
         <div className="reason-grid">
           <article className="reason-card">
-            <h3>Custom From the Ground Up</h3>
-            <p>Your site is built specifically for your business, your brand, and the way you want to be seen online.</p>
+            <span className="reason-badge">01</span>
+            <h3>Custom Built for Your Business</h3>
+            <p>No templates. Your website is designed specifically for your brand, your audience, and your goals.</p>
           </article>
           <article className="reason-card">
-            <h3>Modern and High-Performing</h3>
-            <p>Clean design, responsive layouts, and fast load times come standard so your site feels current and credible.</p>
+            <span className="reason-badge">02</span>
+            <h3>Fast, Modern, and Reliable</h3>
+            <p>Clean design, mobile-first layouts, and fast load times so your site feels professional and trustworthy.</p>
           </article>
           <article className="reason-card">
-            <h3>Designed to Convert</h3>
-            <p>The goal is not only to look good. It is to help more visitors become real leads, calls, and customers.</p>
+            <span className="reason-badge">03</span>
+            <h3>Designed to Generate Results</h3>
+            <p>Built to turn visitors into leads, calls, and paying customers-not just look good.</p>
           </article>
         </div>
       </section>
