@@ -15,7 +15,7 @@ function App() {
   })
 
   useEffect(() => {
-    const sectionIds = ['top', 'why', 'about', 'contact']
+    const sectionIds = ['top', 'why', 'services', 'about', 'contact']
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean)
@@ -80,6 +80,7 @@ function App() {
   const navItems = [
     { id: 'top', label: 'Home' },
     { id: 'why', label: 'Why Me' },
+    { id: 'services', label: 'Services' },
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
   ]
@@ -165,6 +166,10 @@ function App() {
           <p className="hero-copy">
             Fast, modern, conversion-focused websites built from scratch.
           </p>
+          <p className="hero-intro">
+            I&rsquo;m Jonathan, a web developer focused on building clean,
+            high-performing websites for small businesses.
+          </p>
           <div className="hero-actions">
             <a href="#contact" className="button primary">
               Get in Touch
@@ -175,7 +180,13 @@ function App() {
           </div>
         </div>
         <div className="hero-badge" aria-hidden="true">
-          <span>J</span>
+          <img
+            src={logo}
+            alt=""
+            className="hero-logo"
+            loading="eager"
+            decoding="async"
+          />
         </div>
       </section>
 
@@ -198,6 +209,33 @@ function App() {
           <article className="reason-card">
             <h3>Designed to Convert</h3>
             <p>The goal is not only to look good. It is to help more visitors become real leads, calls, and customers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="services-section" id="services">
+        <div className="section-label">Services</div>
+        <h2>Website Services for Local Business Growth</h2>
+        <p className="section-copy">
+          Everything is built around helping your business look more credible,
+          attract more attention, and turn visitors into real customers.
+        </p>
+        <div className="service-grid">
+          <article className="service-card">
+            <h3>Custom Website Design</h3>
+            <p>Professional website design tailored to your business, your branding, and the customers you want to reach.</p>
+          </article>
+          <article className="service-card">
+            <h3>Mobile-Friendly Development</h3>
+            <p>Your website will work smoothly across phones, tablets, and desktops so customers get a strong experience everywhere.</p>
+          </article>
+          <article className="service-card">
+            <h3>Lead-Focused Layouts</h3>
+            <p>Every page is structured to clearly present your offer, build trust, and encourage people to contact you.</p>
+          </article>
+          <article className="service-card">
+            <h3>Ongoing Website Updates</h3>
+            <p>Need changes later? I can help with edits, content updates, and improvements as your business grows.</p>
           </article>
         </div>
       </section>
@@ -228,7 +266,7 @@ function App() {
       <section className="cta" id="contact">
         <div className="cta-header">
           <div className="section-label">Contact</div>
-          <h2>Let&rsquo;s Work Together</h2>
+          <h2>Get a Website That Brings You Customers</h2>
           <p className="section-copy">
             Have a project in mind? Fill out the form and I&rsquo;ll get back to you.
           </p>
@@ -239,7 +277,7 @@ function App() {
             aria-controls="contact-form-panel"
             onClick={() => setIsContactOpen((current) => !current)}
           >
-            {isContactOpen ? 'Close Form' : 'Start a Project'}
+            {isContactOpen ? 'Close Form' : 'Start Your Project'}
           </button>
         </div>
 

@@ -13,6 +13,7 @@ main {
 
 .hero,
 .why-section,
+.services-section,
 .about,
 .cta {
   background: var(--surface);
@@ -145,6 +146,13 @@ main {
   line-height: 1.75;
 }
 
+.hero-intro {
+  margin-top: 0.9rem;
+  max-width: 52ch;
+  font-size: 0.98rem;
+  color: var(--ink-strong);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -156,20 +164,20 @@ main {
   flex-shrink: 0;
   width: clamp(6rem, 14vw, 11rem);
   height: clamp(6rem, 14vw, 11rem);
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent) 0%, #c94f2b 100%);
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff, #f7f4ef);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 36px rgba(222, 95, 59, 0.28);
+  box-shadow: var(--shadow-md);
 }
 
-.hero-badge span {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1;
+.hero-logo {
+  width: 78%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* ─── Shared section labels ───────────────────── */
@@ -264,6 +272,37 @@ main {
 }
 
 .reason-card p {
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+/* ─── About ───────────────────────────────────── */
+
+.services-section {
+  animation: rise 0.7s ease-out both;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff, #f8f6f1);
+  padding: 1.35rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.service-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.1rem;
+}
+
+.service-card p {
   color: var(--ink);
   font-size: 0.95rem;
 }
@@ -484,6 +523,7 @@ footer a:hover {
   }
 
   .reason-grid,
+  .service-grid,
   .project-grid {
     grid-template-columns: 1fr;
   }
