@@ -418,6 +418,13 @@ main {
   color: var(--ink);
 }
 
+.project-logo {
+  width: min(78%, 220px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .project-details {
   display: flex;
   flex-direction: column;
@@ -436,11 +443,17 @@ main {
 }
 
 .project-link {
+  display: inline-flex;
+  text-decoration: none;
   font-size: 0.84rem;
   font-weight: 600;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+
+a.project-link:hover {
+  color: var(--accent-hover);
 }
 
 /* ─── Contact / CTA ───────────────────────────── */

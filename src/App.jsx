@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import logo from './assets/logo.png'
+import xpensistLogo from './assets/xpensist-logo.svg'
 
 function App() {
   const [activeSection, setActiveSection] = useState('top')
@@ -138,6 +139,33 @@ function App() {
     { id: 'services', label: 'Services' },
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
+  ]
+
+  const projects = [
+    {
+      title: 'Xpensist',
+      description: 'A clean, modern website for a local expense management company.',
+      image: xpensistLogo,
+      imageAlt: 'Xpensist logo',
+      link: 'https://xpensist.com',
+      linkLabel: 'Visit Live Site',
+    },
+    {
+      title: 'Project Title',
+      description: 'Short project description will go here.',
+      image: null,
+      imageAlt: '',
+      link: '',
+      linkLabel: 'Project Link',
+    },
+    {
+      title: 'Project Title',
+      description: 'Short project description will go here.',
+      image: null,
+      imageAlt: '',
+      link: '',
+      linkLabel: 'Project Link',
+    },
   ]
 
   const handleContactSubmit = async (event) => {
@@ -322,15 +350,30 @@ function App() {
           performance. Each site is built from scratch — no templates.
         </p>
         <div className="project-grid" aria-label="Project placeholders">
-          {[1, 2, 3].map((project) => (
-            <article className="project-box" key={project}>
+          {projects.map((project) => (
+            <article className="project-box" key={project.title + project.linkLabel}>
               <div className="project-media" aria-hidden="true">
-                <span>Project Image</span>
+                {project.image ? (
+                  <img src={project.image} alt={project.imageAlt} className="project-logo" />
+                ) : (
+                  <span>Project Image</span>
+                )}
               </div>
               <div className="project-details">
-                <h3>Project Title</h3>
-                <p>Short project description will go here.</p>
-                <span className="project-link">Project Link</span>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                {project.link ? (
+                  <a
+                    className="project-link"
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.linkLabel}
+                  </a>
+                ) : (
+                  <span className="project-link">{project.linkLabel}</span>
+                )}
               </div>
             </article>
           ))}
