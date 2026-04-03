@@ -57,10 +57,11 @@ main {
 }
 
 .brand-mark {
-  width: clamp(2rem, 3vw, 2.75rem);
+  width: clamp(2.35rem, 3.4vw, 3.1rem);
   height: auto;
   display: block;
   object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(15, 31, 38, 0.1));
   -webkit-user-drag: none;
   user-select: none;
 }
@@ -115,7 +116,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 3rem;
   min-height: 360px;
   animation: rise 0.55s ease-out both;
 }
@@ -162,11 +163,12 @@ main {
 
 .hero-badge {
   flex-shrink: 0;
-  width: clamp(8rem, 18vw, 14rem);
+  width: clamp(10rem, 22vw, 17rem);
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
 }
 
 .hero-logo {
@@ -174,7 +176,7 @@ main {
   height: auto;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 10px 22px rgba(15, 31, 38, 0.12));
+  filter: drop-shadow(0 8px 18px rgba(15, 31, 38, 0.1));
 }
 
 /* ─── Shared section labels ───────────────────── */
@@ -536,7 +538,8 @@ footer a:hover {
   }
 
   .hero-badge {
-    display: none;
+    width: min(15rem, 62vw);
+    margin: 0 auto;
   }
 
   .form-row {
@@ -585,7 +588,7 @@ footer a:hover {
   }
 
   .brand-mark {
-    width: 2.5rem;
+    width: 2.7rem;
   }
 
 }
