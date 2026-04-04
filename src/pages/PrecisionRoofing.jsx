@@ -130,13 +130,13 @@ export default function PrecisionRoofing() {
       <section className="pr-hero">
         <div className="pr-hero-grid pr-container">
           <div className="pr-hero-copy">
-            <p className="pr-hero-eyebrow">Emergency Leaks. Full Replacements. Done Right.</p>
-            <h1 className="pr-hero-headline">Roofing That Moves Fast And Sells Confidence Instantly</h1>
+            <p className="pr-hero-eyebrow">Free Roof Quotes. Fast Response. Done Right.</p>
+            <h1 className="pr-hero-headline">Book Your Free Roofing Quote Before Small Issues Turn Expensive</h1>
             <p className="pr-hero-sub">
-              This version leans hard into contractor sales psychology: urgency, authority, and a frictionless estimate path that converts homeowners quickly.
+              Free quote messaging now leads the page so homeowners instantly know the next step is easy, fast, and risk-free.
             </p>
             <div className="pr-hero-actions">
-              <a href="#contact" className="pr-btn-primary">Get My Fast Quote</a>
+              <a href="#contact" className="pr-btn-primary">Get My Free Quote</a>
               <a href="tel:+15551234567" className="pr-btn-ghost">Emergency Call Now</a>
             </div>
             <div className="pr-hero-metrics">
@@ -156,11 +156,15 @@ export default function PrecisionRoofing() {
           </div>
 
           <div className="pr-hero-visual">
+            <div className="pr-hero-badge">
+              <span>Free Quote</span>
+              <strong>No-Cost Roof Inspection</strong>
+            </div>
             <img src={heroImg} alt="Aerial view of roof replacement in progress" className="pr-hero-photo" />
             <div className="pr-hero-card">
-              <p>Limited Availability</p>
-              <h3>Storm Season Slots Open</h3>
-              <span>Priority scheduling for leak response, damage inspections, and full roof replacements.</span>
+              <p>Free Quote Offer</p>
+              <h3>Book A No-Cost Roof Inspection</h3>
+              <span>Priority scheduling for leak response, storm checks, and full replacement quotes with no upfront estimate fee.</span>
             </div>
           </div>
         </div>
@@ -177,8 +181,8 @@ export default function PrecisionRoofing() {
 
       <section className="pr-urgency-band">
         <div className="pr-container pr-urgency-inner">
-          <p>Leaks get worse fast. Call now for rapid roof assessment and same-day options.</p>
-          <a href="tel:+15551234567">Call (555) 123-4567</a>
+          <p>Leaks get worse fast. Call now to lock in your free roofing quote and same-day assessment options.</p>
+          <a href="tel:+15551234567">Call For Free Quote</a>
         </div>
       </section>
 
@@ -202,7 +206,7 @@ export default function PrecisionRoofing() {
           <p className="pr-section-eyebrow">Service Lineup</p>
           <h2 className="pr-section-title">High-Demand Roofing Services Positioned To Close</h2>
           <p className="pr-section-sub">
-            Homeowners quickly identify their exact need, reducing hesitation and increasing estimate requests.
+            Homeowners quickly identify their exact need, reducing hesitation and driving more free quote requests.
           </p>
           <div className="pr-service-grid">
             {services.map((s, index) => (
@@ -258,10 +262,10 @@ export default function PrecisionRoofing() {
       <section id="contact" className="pr-section pr-contact">
         <div className="pr-container pr-contact-inner">
           <div className="pr-contact-copy">
-            <p className="pr-section-eyebrow">Ready When You Are</p>
-            <h2 className="pr-section-title">Lock In A Fast Roofing Estimate Today</h2>
+            <p className="pr-section-eyebrow">Free Quote Request</p>
+            <h2 className="pr-section-title">Get Your Free Roofing Quote Today</h2>
             <p>
-              Tell us what is happening and get a clear next step quickly without a long sales process.
+              Tell us what is happening and get a fast, no-pressure roofing quote without paying for the inspection.
             </p>
             <div className="pr-contact-details">
               <div className="pr-contact-item">
@@ -280,6 +284,10 @@ export default function PrecisionRoofing() {
           </div>
 
           <form className="pr-form" onSubmit={handleSubmit}>
+            <div className="pr-form-badge">
+              <span>Free Quote</span>
+              <strong>Zero inspection charge</strong>
+            </div>
             <div className="pr-form-row">
               <label>
                 Name
@@ -312,9 +320,9 @@ export default function PrecisionRoofing() {
               <textarea name="message" rows={4} placeholder="Tell us about your project..." />
             </label>
             <button type="submit" className="pr-btn-primary pr-submit" disabled={formState !== 'idle'}>
-              {formState === 'sending' ? 'Sending...' : formState === 'sent' ? 'Message Sent' : 'Send Message'}
+              {formState === 'sending' ? 'Sending...' : formState === 'sent' ? 'Quote Request Sent' : 'Request Free Quote'}
             </button>
-            <p className="pr-form-note">Priority leads are typically contacted within the same day.</p>
+            <p className="pr-form-note">Free quote requests are typically contacted within the same day.</p>
           </form>
         </div>
       </section>

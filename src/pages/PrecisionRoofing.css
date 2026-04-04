@@ -266,6 +266,34 @@
   animation: pr-rise 760ms ease 80ms both;
 }
 
+.pr-hero-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  padding: 0.72rem 0.85rem;
+  border-radius: 12px;
+  background: linear-gradient(140deg, #cc4f1d, #922f13);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(146, 47, 19, 0.28);
+}
+
+.pr-hero-badge span {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  opacity: 0.9;
+}
+
+.pr-hero-badge strong {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
 .pr-hero-photo {
   width: 100%;
   height: min(74vh, 620px);
@@ -603,6 +631,31 @@
   gap: 0.82rem;
 }
 
+.pr-form-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 179, 143, 0.32);
+  background: rgba(255, 179, 143, 0.1);
+  color: #fff;
+}
+
+.pr-form-badge span {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  color: #ffb38f;
+}
+
+.pr-form-badge strong {
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
 .pr-form-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -787,6 +840,17 @@
     position: static;
     margin-top: 0.75rem;
     max-width: none;
+  }
+
+  .pr-hero-badge {
+    top: 0.8rem;
+    left: 0.8rem;
+    right: 0.8rem;
+  }
+
+  .pr-form-badge {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
