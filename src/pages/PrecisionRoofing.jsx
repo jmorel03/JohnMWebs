@@ -40,6 +40,33 @@ const services = [
   },
 ]
 
+const processSteps = [
+  {
+    step: '01',
+    title: 'Inspection & Estimate',
+    detail:
+      'The team audits roof condition, attic ventilation, and water pathways, then presents a line-item estimate.',
+  },
+  {
+    step: '02',
+    title: 'Material Planning',
+    detail:
+      'Shingle profile, flashing details, and weatherproofing layers are selected to match budget and climate.',
+  },
+  {
+    step: '03',
+    title: 'Install & Clean Site',
+    detail:
+      'Precision crews complete installation with daily cleanup, magnetic sweeps, and documented progress updates.',
+  },
+  {
+    step: '04',
+    title: 'Final Walkthrough',
+    detail:
+      'The project closes with warranty handoff, quality photos, and a checklist review with the property owner.',
+  },
+]
+
 export default function PrecisionRoofing() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [formState, setFormState] = useState('idle')
@@ -55,11 +82,10 @@ export default function PrecisionRoofing() {
 
   return (
     <div className="pr-root">
-      {/* ── NAV ── */}
       <header className="pr-nav">
         <div className="pr-nav-inner">
           <div className="pr-brand">
-            <span className="pr-brand-icon">⬡</span>
+            <span className="pr-brand-icon">PR</span>
             <span className="pr-brand-name">Precision Roofing</span>
           </div>
 
@@ -75,7 +101,8 @@ export default function PrecisionRoofing() {
 
           <nav className={`pr-nav-links${menuOpen ? ' open' : ''}`}>
             <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-            <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#process" onClick={() => setMenuOpen(false)}>Process</a>
+            <a href="#gallery" onClick={() => setMenuOpen(false)}>Gallery</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
             <a href="#contact" className="pr-nav-cta" onClick={() => setMenuOpen(false)}>
               Free Estimate
@@ -84,100 +111,127 @@ export default function PrecisionRoofing() {
         </div>
       </header>
 
-      {/* ── HERO ── */}
       <section className="pr-hero">
-        <img src={heroImg} alt="Aerial view of roof replacement in progress" className="pr-hero-bg" />
-        <div className="pr-hero-overlay" />
-        <div className="pr-hero-content">
-          <p className="pr-hero-eyebrow">Licensed &amp; Insured · Serving the Greater Metro Area</p>
-          <h1 className="pr-hero-headline">
-            Roofing Done Right.<br />The First Time.
-          </h1>
-          <p className="pr-hero-sub">
-            Precision Roofing delivers expert installation, repair, and replacement for residential and commercial properties — on time and on budget.
-          </p>
-          <div className="pr-hero-actions">
-            <a href="#contact" className="pr-btn-primary">Get a Free Estimate</a>
-            <a href="#services" className="pr-btn-ghost">Our Services</a>
+        <div className="pr-hero-grid pr-container">
+          <div className="pr-hero-copy">
+            <p className="pr-hero-eyebrow">Project Spotlight</p>
+            <h1 className="pr-hero-headline">Precision Roofing Service Website</h1>
+            <p className="pr-hero-sub">
+              A conversion-focused roofing site designed to build trust fast, show service depth, and turn traffic into booked estimates.
+            </p>
+            <div className="pr-hero-actions">
+              <a href="#contact" className="pr-btn-primary">Request Estimate</a>
+              <a href="#services" className="pr-btn-ghost">Explore Services</a>
+            </div>
+            <div className="pr-hero-metrics">
+              <div className="pr-metric">
+                <strong>4</strong>
+                <span>Core Service Lines</span>
+              </div>
+              <div className="pr-metric">
+                <strong>1 Day</strong>
+                <span>Lead Response Goal</span>
+              </div>
+              <div className="pr-metric">
+                <strong>100%</strong>
+                <span>Mobile Optimized Layout</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="pr-hero-visual">
+            <img src={heroImg} alt="Aerial view of roof replacement in progress" className="pr-hero-photo" />
+            <div className="pr-hero-card">
+              <p>Built For</p>
+              <h3>Local Roofing Contractors</h3>
+              <span>Lead generation, credibility, and service clarity.</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── TRUST BAR ── */}
-      <div className="pr-trust-bar">
-        <div className="pr-trust-inner">
-          <span>⭐ 500+ Roofs Completed</span>
-          <span>🏆 15+ Years Experience</span>
-          <span>✅ Licensed &amp; Fully Insured</span>
-          <span>📞 24/7 Emergency Service</span>
+      <section className="pr-proof-strip">
+        <div className="pr-container pr-proof-inner">
+          <p>Clear offer messaging</p>
+          <p>Trust-first visuals</p>
+          <p>Service-specific funnels</p>
+          <p>Fast mobile contact path</p>
         </div>
-      </div>
+      </section>
 
-      {/* ── SERVICES ── */}
       <section id="services" className="pr-section pr-services">
         <div className="pr-container">
-          <p className="pr-section-eyebrow">What We Do</p>
-          <h2 className="pr-section-title">Roofing Services</h2>
+          <p className="pr-section-eyebrow">Service Architecture</p>
+          <h2 className="pr-section-title">Pages Designed To Sell Each Roofing Offer</h2>
           <p className="pr-section-sub">
-            From simple repairs to full replacements, we handle every roofing job with the same commitment to quality.
+            Each card represents a dedicated service block with tailored copy, proof framing, and direct CTA paths.
           </p>
           <div className="pr-service-grid">
-            {services.map((s) => (
-              <div key={s.title} className="pr-service-card">
+            {services.map((s, index) => (
+              <article key={s.title} className="pr-service-card">
                 <div className="pr-service-img-wrap">
                   <img src={s.image} alt={s.alt} />
                 </div>
                 <div className="pr-service-body">
+                  <p className="pr-service-kicker">Service {String(index + 1).padStart(2, '0')}</p>
                   <h3>{s.title}</h3>
                   <p>{s.description}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── ABOUT / WHY US ── */}
-      <section id="about" className="pr-section pr-about">
-        <div className="pr-container pr-about-inner">
-          <div className="pr-about-img">
-            <img src={aerialImg} alt="Roofing crew working on a residential roof" />
-          </div>
-          <div className="pr-about-copy">
-            <p className="pr-section-eyebrow">Why Precision Roofing</p>
-            <h2 className="pr-section-title">Built on Trust. Proven by Results.</h2>
-            <p>
-              We're a locally owned roofing company that takes pride in every job — whether it's patching a single shingle or replacing an entire commercial roof. No subcontractors, no shortcuts.
-            </p>
-            <ul className="pr-checklist">
-              <li>Direct communication with your crew lead from start to finish</li>
-              <li>Detailed written estimates — no surprise charges</li>
-              <li>Clean job sites, every single time</li>
-              <li>Workmanship warranty on every project</li>
-            </ul>
-            <a href="#contact" className="pr-btn-primary">Get Your Free Estimate</a>
+      <section id="process" className="pr-section pr-process">
+        <div className="pr-container">
+          <p className="pr-section-eyebrow">Delivery Framework</p>
+          <h2 className="pr-section-title">How The Roofing Funnel Is Structured</h2>
+          <div className="pr-process-grid">
+            {processSteps.map((item) => (
+              <article className="pr-process-card" key={item.step}>
+                <span className="pr-step-badge">{item.step}</span>
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── CONTACT ── */}
+      <section id="gallery" className="pr-section pr-gallery">
+        <div className="pr-container">
+          <div className="pr-gallery-head">
+            <p className="pr-section-eyebrow">Visual Story</p>
+            <h2 className="pr-section-title">Image System Used Across The Build</h2>
+          </div>
+          <div className="pr-gallery-grid">
+            <img src={aerialImg} alt="Roofing crew working on a residential roof" className="pr-gallery-large" />
+            <img src={tileImg} alt="Tile roof installation" />
+            <img src={flatRoofImg} alt="Flat roof waterproofing" />
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="pr-section pr-contact">
         <div className="pr-container pr-contact-inner">
           <div className="pr-contact-copy">
-            <p className="pr-section-eyebrow">Contact Us</p>
-            <h2 className="pr-section-title">Let's Talk About Your Roof</h2>
-            <p>Fill out the form and we'll get back to you within one business day with a free, no-obligation estimate.</p>
+            <p className="pr-section-eyebrow">Lead Capture</p>
+            <h2 className="pr-section-title">Request A Roofing Estimate</h2>
+            <p>
+              This contact module is tuned for quick conversions: short fields, service intent selection, and a clear response promise.
+            </p>
             <div className="pr-contact-details">
               <div className="pr-contact-item">
-                <span className="pr-contact-icon">📞</span>
+                <span className="pr-contact-label">Phone</span>
                 <span>(555) 123-4567</span>
               </div>
               <div className="pr-contact-item">
-                <span className="pr-contact-icon">✉️</span>
+                <span className="pr-contact-label">Email</span>
                 <span>info@precisionroofing.com</span>
               </div>
               <div className="pr-contact-item">
-                <span className="pr-contact-icon">📍</span>
+                <span className="pr-contact-label">Service Area</span>
                 <span>Serving the Greater Metro Area</span>
               </div>
             </div>
@@ -216,21 +270,20 @@ export default function PrecisionRoofing() {
               <textarea name="message" rows={4} placeholder="Tell us about your project..." />
             </label>
             <button type="submit" className="pr-btn-primary pr-submit" disabled={formState !== 'idle'}>
-              {formState === 'sending' ? 'Sending…' : formState === 'sent' ? '✓ Message Sent!' : 'Send Message'}
+              {formState === 'sending' ? 'Sending...' : formState === 'sent' ? 'Message Sent' : 'Send Message'}
             </button>
           </form>
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
       <footer className="pr-footer">
         <div className="pr-footer-inner">
           <div className="pr-brand">
-            <span className="pr-brand-icon">⬡</span>
+            <span className="pr-brand-icon">PR</span>
             <span className="pr-brand-name">Precision Roofing</span>
           </div>
           <p className="pr-footer-copy">© 2026 Precision Roofing. All rights reserved.</p>
-          <Link to="/" className="pr-footer-back">← Back to JohnMWebs</Link>
+          <Link to="/" className="pr-footer-back">Back to JohnMWebs</Link>
         </div>
       </footer>
     </div>
