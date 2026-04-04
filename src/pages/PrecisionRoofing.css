@@ -1,20 +1,17 @@
 .pr-root {
-  --pr-bg: #f3ede1;
-  --pr-surface: #fffaf2;
+  --pr-bg: #f5f2eb;
+  --pr-surface: #ffffff;
   --pr-surface-2: #141f2b;
   --pr-ink: #1b2631;
   --pr-ink-soft: #4d5b69;
   --pr-accent: #d77a2f;
   --pr-accent-2: #b14e2b;
-  --pr-line: #dccfbb;
+  --pr-line: #d8deea;
   --pr-radius: 18px;
   --pr-shadow: 0 22px 40px rgba(20, 31, 43, 0.14);
 
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 92% 10%, rgba(215, 122, 47, 0.22), transparent 30%),
-    radial-gradient(circle at 10% 85%, rgba(18, 47, 84, 0.16), transparent 33%),
-    var(--pr-bg);
+  background: var(--pr-bg);
   color: var(--pr-ink);
   font-family: 'Inter', sans-serif;
 }
@@ -57,7 +54,7 @@
   top: 0;
   z-index: 100;
   backdrop-filter: blur(10px);
-  background: rgba(243, 237, 225, 0.86);
+  background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid rgba(27, 38, 49, 0.08);
 }
 
@@ -301,9 +298,9 @@
 }
 
 .pr-proof-strip {
-  border-top: 1px solid var(--pr-line);
-  border-bottom: 1px solid var(--pr-line);
-  background: rgba(255, 255, 255, 0.48);
+  border-top: 1px solid #223447;
+  border-bottom: 1px solid #223447;
+  background: #1b2b3c;
 }
 
 .pr-proof-inner {
@@ -320,11 +317,12 @@
   font-weight: 700;
   letter-spacing: 0.07em;
   font-size: 0.71rem;
-  color: var(--pr-accent-2);
+  color: #eef4fb;
 }
 
 .pr-services {
   padding-top: 5.4rem;
+  background: #ffffff;
 }
 
 .pr-service-grid {
@@ -432,7 +430,7 @@
 }
 
 .pr-gallery {
-  background: #f6f1e8;
+  background: #ffffff;
 }
 
 .pr-gallery-head {
@@ -459,8 +457,8 @@
 }
 
 .pr-contact {
-  background: #191f27;
-  color: #edf2f7;
+  background: #eef3f9;
+  color: var(--pr-ink);
 }
 
 .pr-contact-inner {
@@ -470,7 +468,7 @@
 }
 
 .pr-contact .pr-section-eyebrow {
-  color: #ffb872;
+  color: var(--pr-accent-2);
 }
 
 .pr-contact .pr-section-title {
@@ -478,7 +476,7 @@
 }
 
 .pr-contact-copy p {
-  color: rgba(237, 242, 247, 0.75);
+  color: var(--pr-ink-soft);
   line-height: 1.7;
 }
 
@@ -489,12 +487,13 @@
 }
 
 .pr-contact-item {
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(27, 38, 49, 0.14);
   border-radius: 12px;
   padding: 0.8rem 0.85rem;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  background: #ffffff;
 }
 
 .pr-contact-label {
@@ -502,14 +501,14 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 700;
-  color: #ffb872;
+  color: var(--pr-accent-2);
 }
 
 .pr-form {
   padding: 1.1rem;
   border-radius: var(--pr-radius);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(27, 38, 49, 0.14);
+  background: #ffffff;
   display: grid;
   gap: 0.86rem;
 }
@@ -527,15 +526,15 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
-  color: rgba(237, 242, 247, 0.78);
+  color: #52606d;
 }
 
 .pr-form input,
 .pr-form select,
 .pr-form textarea {
-  background: rgba(255, 255, 255, 0.9);
+  background: #ffffff;
   color: #1d2732;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(27, 38, 49, 0.18);
   border-radius: 10px;
   padding: 0.74rem 0.76rem;
   font-size: 0.9rem;
