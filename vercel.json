@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/projects/:path*",
+      "destination": "/"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
