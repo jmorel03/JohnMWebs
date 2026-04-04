@@ -40,30 +40,45 @@ const services = [
   },
 ]
 
+const trustPillars = [
+  {
+    title: 'Rapid Dispatch',
+    detail: 'Urgent calls are prioritized so leak and storm damage are addressed before costs climb.',
+  },
+  {
+    title: 'No Surprise Pricing',
+    detail: 'Clear written scopes and upfront cost breakdowns keep projects predictable from start to finish.',
+  },
+  {
+    title: 'Storm-Ready Builds',
+    detail: 'High-performance roofing systems are installed to stand up to severe weather and heavy rain.',
+  },
+]
+
 const processSteps = [
   {
     step: '01',
-    title: 'Inspection & Estimate',
+    title: 'On-Site Roof Evaluation',
     detail:
-      'The team audits roof condition, attic ventilation, and water pathways, then presents a line-item estimate.',
+      'A detailed inspection identifies wear, leak paths, and structural concerns before any proposal is made.',
   },
   {
     step: '02',
-    title: 'Material Planning',
+    title: 'Clear Scope & Pricing',
     detail:
-      'Shingle profile, flashing details, and weatherproofing layers are selected to match budget and climate.',
+      'You get a transparent, line-item estimate with material options that match budget and home style.',
   },
   {
     step: '03',
-    title: 'Install & Clean Site',
+    title: 'Precision Installation',
     detail:
-      'Precision crews complete installation with daily cleanup, magnetic sweeps, and documented progress updates.',
+      'Certified crews complete the build with strict install standards, clean execution, and photo updates.',
   },
   {
     step: '04',
-    title: 'Final Walkthrough',
+    title: 'Final Walkthrough & Warranty',
     detail:
-      'The project closes with warranty handoff, quality photos, and a checklist review with the property owner.',
+      'Every project ends with a closeout review, quality checklist, and clear warranty documentation.',
   },
 ]
 
@@ -100,12 +115,13 @@ export default function PrecisionRoofing() {
           </button>
 
           <nav className={`pr-nav-links${menuOpen ? ' open' : ''}`}>
+            <a href="#why" onClick={() => setMenuOpen(false)}>Why Us</a>
             <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
             <a href="#process" onClick={() => setMenuOpen(false)}>Process</a>
             <a href="#gallery" onClick={() => setMenuOpen(false)}>Gallery</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
             <a href="#contact" className="pr-nav-cta" onClick={() => setMenuOpen(false)}>
-              Free Estimate
+              Get Estimate
             </a>
           </nav>
         </div>
@@ -114,27 +130,27 @@ export default function PrecisionRoofing() {
       <section className="pr-hero">
         <div className="pr-hero-grid pr-container">
           <div className="pr-hero-copy">
-            <p className="pr-hero-eyebrow">Project Spotlight</p>
-            <h1 className="pr-hero-headline">Precision Roofing Service Website</h1>
+            <p className="pr-hero-eyebrow">Emergency Leaks. Full Replacements. Done Right.</p>
+            <h1 className="pr-hero-headline">Roofing That Moves Fast And Sells Confidence Instantly</h1>
             <p className="pr-hero-sub">
-              A conversion-focused roofing site designed to build trust fast, show service depth, and turn traffic into booked estimates.
+              This version leans hard into contractor sales psychology: urgency, authority, and a frictionless estimate path that converts homeowners quickly.
             </p>
             <div className="pr-hero-actions">
-              <a href="#contact" className="pr-btn-primary">Request Estimate</a>
-              <a href="#services" className="pr-btn-ghost">Explore Services</a>
+              <a href="#contact" className="pr-btn-primary">Get My Fast Quote</a>
+              <a href="tel:+15551234567" className="pr-btn-ghost">Emergency Call Now</a>
             </div>
             <div className="pr-hero-metrics">
               <div className="pr-metric">
-                <strong>4</strong>
-                <span>Core Service Lines</span>
+                <strong>Same Day</strong>
+                <span>Inspection Windows</span>
               </div>
               <div className="pr-metric">
-                <strong>1 Day</strong>
-                <span>Lead Response Goal</span>
+                <strong>0%</strong>
+                <span>Guesswork In The Quote</span>
               </div>
               <div className="pr-metric">
-                <strong>100%</strong>
-                <span>Mobile Optimized Layout</span>
+                <strong>Top Rated</strong>
+                <span>Local Trust Positioning</span>
               </div>
             </div>
           </div>
@@ -142,29 +158,51 @@ export default function PrecisionRoofing() {
           <div className="pr-hero-visual">
             <img src={heroImg} alt="Aerial view of roof replacement in progress" className="pr-hero-photo" />
             <div className="pr-hero-card">
-              <p>Built For</p>
-              <h3>Local Roofing Contractors</h3>
-              <span>Lead generation, credibility, and service clarity.</span>
+              <p>Limited Availability</p>
+              <h3>Storm Season Slots Open</h3>
+              <span>Priority scheduling for leak response, damage inspections, and full roof replacements.</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="pr-proof-strip">
+      <section className="pr-proof-strip" id="why">
         <div className="pr-container pr-proof-inner">
-          <p>Clear offer messaging</p>
-          <p>Trust-first visuals</p>
-          <p>Service-specific funnels</p>
-          <p>Fast mobile contact path</p>
+          <p>Licensed And Fully Insured</p>
+          <p>Same-Day Response Priority</p>
+          <p>Detailed Written Proposals</p>
+          <p>Warranty-Backed Roofing Systems</p>
+        </div>
+      </section>
+
+      <section className="pr-urgency-band">
+        <div className="pr-container pr-urgency-inner">
+          <p>Leaks get worse fast. Call now for rapid roof assessment and same-day options.</p>
+          <a href="tel:+15551234567">Call (555) 123-4567</a>
+        </div>
+      </section>
+
+      <section className="pr-section pr-pillar-section">
+        <div className="pr-container">
+          <p className="pr-section-eyebrow">Why Homeowners Choose Precision</p>
+          <h2 className="pr-section-title">Hard-Hitting Trust Signals That Push Action</h2>
+          <div className="pr-pillars-grid">
+            {trustPillars.map((pillar) => (
+              <article key={pillar.title} className="pr-pillar-card">
+                <h3>{pillar.title}</h3>
+                <p>{pillar.detail}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <section id="services" className="pr-section pr-services">
         <div className="pr-container">
-          <p className="pr-section-eyebrow">Service Architecture</p>
-          <h2 className="pr-section-title">Pages Designed To Sell Each Roofing Offer</h2>
+          <p className="pr-section-eyebrow">Service Lineup</p>
+          <h2 className="pr-section-title">High-Demand Roofing Services Positioned To Close</h2>
           <p className="pr-section-sub">
-            Each card represents a dedicated service block with tailored copy, proof framing, and direct CTA paths.
+            Homeowners quickly identify their exact need, reducing hesitation and increasing estimate requests.
           </p>
           <div className="pr-service-grid">
             {services.map((s, index) => (
@@ -185,8 +223,8 @@ export default function PrecisionRoofing() {
 
       <section id="process" className="pr-section pr-process">
         <div className="pr-container">
-          <p className="pr-section-eyebrow">Delivery Framework</p>
-          <h2 className="pr-section-title">How The Roofing Funnel Is Structured</h2>
+          <p className="pr-section-eyebrow">How Projects Run</p>
+          <h2 className="pr-section-title">Fast 4-Step Path From First Call To Final Closeout</h2>
           <div className="pr-process-grid">
             {processSteps.map((item) => (
               <article className="pr-process-card" key={item.step}>
@@ -202,24 +240,28 @@ export default function PrecisionRoofing() {
       <section id="gallery" className="pr-section pr-gallery">
         <div className="pr-container">
           <div className="pr-gallery-head">
-            <p className="pr-section-eyebrow">Visual Story</p>
-            <h2 className="pr-section-title">Image System Used Across The Build</h2>
+            <p className="pr-section-eyebrow">Visual Proof</p>
+            <h2 className="pr-section-title">Proof-Driven Visuals That Eliminate Doubt</h2>
           </div>
           <div className="pr-gallery-grid">
             <img src={aerialImg} alt="Roofing crew working on a residential roof" className="pr-gallery-large" />
             <img src={tileImg} alt="Tile roof installation" />
             <img src={flatRoofImg} alt="Flat roof waterproofing" />
           </div>
+          <blockquote className="pr-quote">
+            "They showed up quickly, explained every step, and delivered exactly what they promised."
+            <cite>Homeowner Testimonial Placement</cite>
+          </blockquote>
         </div>
       </section>
 
       <section id="contact" className="pr-section pr-contact">
         <div className="pr-container pr-contact-inner">
           <div className="pr-contact-copy">
-            <p className="pr-section-eyebrow">Lead Capture</p>
-            <h2 className="pr-section-title">Request A Roofing Estimate</h2>
+            <p className="pr-section-eyebrow">Ready When You Are</p>
+            <h2 className="pr-section-title">Lock In A Fast Roofing Estimate Today</h2>
             <p>
-              This contact module is tuned for quick conversions: short fields, service intent selection, and a clear response promise.
+              Tell us what is happening and get a clear next step quickly without a long sales process.
             </p>
             <div className="pr-contact-details">
               <div className="pr-contact-item">
@@ -272,6 +314,7 @@ export default function PrecisionRoofing() {
             <button type="submit" className="pr-btn-primary pr-submit" disabled={formState !== 'idle'}>
               {formState === 'sending' ? 'Sending...' : formState === 'sent' ? 'Message Sent' : 'Send Message'}
             </button>
+            <p className="pr-form-note">Priority leads are typically contacted within the same day.</p>
           </form>
         </div>
       </section>
